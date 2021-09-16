@@ -182,7 +182,7 @@ export class UpdateAPK {
     const version = result.version;
     const trackViewUrl = result.trackViewUrl;
 
-    if (semverLt(RNUpdateAPK.versionName, version)) {
+    if (semverLt(RNUpdateAPK.versionName+'.0', version+'.0')) {
       console.log('RNUpdateAPK::getAppStoreVersionSuccess - outdated based on version name, local/remote: ' + RNUpdateAPK.versionName + "/" + version);
       if (this.options.needUpdateApp) {
         this.options.needUpdateApp(isUpdate => {
